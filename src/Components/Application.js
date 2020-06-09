@@ -47,6 +47,7 @@ function Application() {
             <Router history={browserHistory}>
               <SignUp path="signUp" />
               <SignIn path="/" />
+              <SignIn path="/fms" />
               <PasswordReset path="passwordReset" />
             </Router>
           </Container>

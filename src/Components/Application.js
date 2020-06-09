@@ -38,6 +38,7 @@ function Application() {
             <Router history={browserHistory}>
             <ProfilePage path="profile"/>
             <FileContainer path="/" />
+            <FileContainer path="/fms" />
             </Router>
           </Container>
          

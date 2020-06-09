@@ -177,15 +177,12 @@ function FileContainer(props) {
         {currentPageName}
       </Typography>
 
-      <Grid item xs={16}>
-        <Grid container justify="left" spacing={spacing}>
+      <Grid item xs={12}>
+        <Grid container justify="flex-start" spacing={spacing}>
           {folders &&
             folders.length > 0 &&
             folders.map((value) => (
               <Grid
-                direction="row"
-                justify="flex-start"
-                alignItems="flex-start"
                 key={value.id}
                 item
                 onClick={(e) => {
@@ -193,21 +190,18 @@ function FileContainer(props) {
                   setCurrentFolderSettings(value);
                 }}
               >
-                <img src="/folder.png" className={classes.folder} />
+                <img src={require("../folder.png")} className={classes.folder} />
                 <label>{value.name}</label>
                 {/* <Paper className={classes.paper} /> */}
               </Grid>
             ))}
           <Grid
-            direction="row"
-            justify="flex-start"
-            alignItems="flex-start"
             key={-1}
             item
           >
             <FormDialog handleFolderAdd={handleFolderAdd}>
               <img
-                src="/addfolder.jpg"
+                src={require("../addfolder.jpg")}
                 title={"New Folder"}
                 className={classes.folder}
               />

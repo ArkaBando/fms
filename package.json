@@ -1,5 +1,5 @@
 {
-  "homepage": "http://ArkaBando.github.io/fms",
+  "homepage":"https://5ee020fc7b370700082bf6c1--youthful-tesla-bc8685.netlify.app/",
   "name": "fms",
   "version": "0.1.0",
   "private": true,
@@ -53,3 +53,5 @@
     "gh-pages": "^3.0.0"
   }
 }
+
+  

@@ -24,16 +24,6 @@ export const db = firebaseApp.firestore();
 
 const provider = new firebase.auth.GoogleAuthProvider();
 
-// export const fetchAllFiles = aync () => {
-//   debugger;
-//   let querySnapshot = await db.collection("files")
-//     .where("parentId", "==", null)
-//     .get();
-
-//     const data = querySnapshot.docs.map((doc) => doc.data());
-//     console.log(data);
-//     return data;
-// };
 
 export const fetchAllFiles = async (parentFolderId = null) => {
   try {
@@ -60,7 +50,6 @@ export const signInWithGoogle = () => {
 
 export const generateFileStructure = async (file, fileDetails) => {
   if (!file) return;
-  debugger;
   const fileRef = firestore.doc(`files/${file.id}`);
   const snapshot = await fileRef.get();
   if (!snapshot.exists) {
@@ -78,13 +67,6 @@ export const generateFileStructure = async (file, fileDetails) => {
     } catch (error) {
       console.error("Error creating file document", error);
     }
-
-    // debugger;
-    // let files = firestore.doc(`files`);
-    // // firebase.database().ref("files");
-    // files.orderByChild("name").equalTo("file1").on("child_added", function(snapshot) {
-    //   console.log(snapshot.key);
-    // });
   }
   return getFileDocument(file.id);
 };

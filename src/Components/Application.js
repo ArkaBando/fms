@@ -37,8 +37,7 @@ function Application() {
             <MenuAppBar />
             <Router history={browserHistory}>
             <ProfilePage path="profile"/>
-            <FileContainer path="/" />
-            <FileContainer path="/fms" />
+            <FileContainer path="*" />
             </Router>
           </Container>
          
@@ -46,8 +45,7 @@ function Application() {
           <Container maxWidth="md">
             <Router history={browserHistory}>
               <SignUp path="signUp" />
-              <SignIn path="/" />
-              <SignIn path="/fms" />
+              <SignIn path="*" />
               <PasswordReset path="passwordReset" />
             </Router>
           </Container>

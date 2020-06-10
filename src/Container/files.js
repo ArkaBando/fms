@@ -44,7 +44,11 @@ function FileContainer(props) {
   const handleFolderAdd = (folderName) => {
     if (folderName && folderName != null && folderName != "") {
       let file = {};
-      file["parentFolderId"] = props.folderSettings.file.parentFolderId;
+      file["parentFolderId"] =
+        (props.folderSettings.file.parentFolderId == null ||
+        props.folderSettings.file.parentFolderId == undefined)
+          ? folderSetting.parentFolderId
+          : props.folderSettings.file.parentFolderId;
       file["id"] = uuid();
       file["name"] = folderName;
       file["type"] = "folder";
@@ -190,15 +194,15 @@ function FileContainer(props) {
                   setCurrentFolderSettings(value);
                 }}
               >
-                <img src={require("../folder.png")} className={classes.folder} />
+                <img
+                  src={require("../folder.png")}
+                  className={classes.folder}
+                />
                 <label>{value.name}</label>
                 {/* <Paper className={classes.paper} /> */}
               </Grid>
             ))}
-          <Grid
-            key={-1}
-            item
-          >
+          <Grid key={-1} item>
             <FormDialog handleFolderAdd={handleFolderAdd}>
               <img
                 src={require("../addfolder.jpg")}
